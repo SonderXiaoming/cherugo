@@ -134,7 +134,7 @@ async def decherulize_voice(bot, ev: CQEvent):
         await bot.send(ev, '切、切噜太长切不动勒切噜噜...', at_sender=True)
         return
     text = '切噜～♪' + str2cheru(s)
-    voice = await chueru2voice(text)
+    voice = await chueru2voice(text[5:])
     msg = '的切噜噜是：\n' + util.filt_message(text)
     await bot.send(ev, msg, at_sender=True)
     await bot.send(ev, voice)
